@@ -24,8 +24,13 @@ case $opcion in
     echo "Resultado: $resultado"
     ;;
     4)
-    resultado=$(echo "$num1 / $num2" | bc)
-    echo "Resultado: $resultado"
+    #Division
+    if ["$num2" -ne 0]; then
+        resultado=$(echo "$num1 / $num2" | bc)
+        echo "Resultado: $resultado"
+    else
+        echo "Division por 0 no permitida."
+    fi
     ;;
     5)
     echo "Saliendo del programa..."
